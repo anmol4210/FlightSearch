@@ -1,5 +1,6 @@
 package com.nagarro.io;
 
+import com.nagarro.constants.Constants;
 import com.nagarro.model.FlightDetails;
 import com.nagarro.model.TravelDetails;
 
@@ -38,7 +39,7 @@ public class Output {
         if(traveDetail.getOutputPreference().toString().equalsIgnoreCase("y")){
             Collections.sort(result,byFareAndDuration);
             for (int index=0;index<result.size();index++){
-                float fare=Float.parseFloat(result.get(index).getFare()+" ")*(float)1.4;
+                float fare=Float.parseFloat(result.get(index).getFare()+" ")* Constants.businessClassFareMultiplier;
                 System.out.println(result.get(index).getFlightNo()+"        "+result.get(index).getFlightTime()+"           "+
                         result.get(index).getFlightDur()+"      "+fare);
             }

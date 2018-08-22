@@ -1,5 +1,6 @@
 package com.nagarro.model;
 
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 
@@ -52,6 +53,7 @@ public class TravelDetails {
     /**
      * @param stringBuffer
      */
+    @NotNull(message = "Departure Location cannot be null")
     public void setDepartureLocation(StringBuffer stringBuffer) {
         this.departureLocation = stringBuffer;
     }
@@ -66,6 +68,7 @@ public class TravelDetails {
     /**
      * @param arrivalLocation
      */
+    @NotNull(message = "Arrival Location cannot be null")
     public void setArrivalLocation(StringBuffer arrivalLocation) {
         this.arrivalLocation = arrivalLocation;
     }

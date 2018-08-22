@@ -17,13 +17,14 @@ import com.nagarro.services.FileRead;
 public class SearchFlights {
 
     /**
+     *
      * @param traveDetail
      * @return
      * @throws InterruptedException
      * @throws ExecutionException
      */
     public Future<ArrayList<FlightDetails>>[] searchAirline(TravelDetails traveDetail) throws InterruptedException, ExecutionException{
-        String csvFile = "D:\\Java Training\\Java Week 2- Advanced Java\\Assignment Links";
+        String csvFile = "./Assignment Links";
         String line = "";
         File folder = new File(csvFile);
         File[] listOfFiles = folder.listFiles();
