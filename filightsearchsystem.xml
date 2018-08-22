@@ -237,6 +237,8 @@
     </manifest>
   </jar>
 </target>
+
+
   <target name="run">
     <java jar="build/jar/FlightSearch.jar" fork="true"/>
   </target>

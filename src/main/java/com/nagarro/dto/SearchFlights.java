@@ -24,7 +24,7 @@ public class SearchFlights {
      * @throws ExecutionException
      */
     public Future<ArrayList<FlightDetails>>[] searchAirline(TravelDetails traveDetail) throws InterruptedException, ExecutionException{
-        String csvFile = "./Assignment Links";
+        String csvFile = "Assignment Links";
         String line = "";
         File folder = new File(csvFile);
         File[] listOfFiles = folder.listFiles();

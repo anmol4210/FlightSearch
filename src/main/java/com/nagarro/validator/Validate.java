@@ -86,15 +86,16 @@ public class Validate {
         }
         try{
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-           @Future(message = "Date Should be in fututre") LocalDate ld;
-           ld= LocalDate.parse(input,formatter);
+          // @Future(message = "Date Should be in fututre")
+            LocalDate localDate;
+            localDate= LocalDate.parse(input,formatter);
 
-            if(! ld.isAfter(LocalDate.now())){
+            if(! localDate.isAfter(LocalDate.now())){
                 //System.out.println("True");
                 throw new FlightException("Enter a valid date! Enter Again! ");
             }
 
-                ld.getDayOfWeek();
+            localDate.getDayOfWeek();
 
 
             //System.out.println( new SimpleDateFormat("dd/MM/yyyy").parse(input));

@@ -10,7 +10,9 @@ import java.time.LocalDate;
  *
  */
 public class TravelDetails {
-    private StringBuffer flightClass,outputPreference,departureLocation,arrivalLocation;
+   // @NotNull(message = "Departure Location cannot be null")
+    private StringBuilder departureLocation,arrivalLocation;
+    private StringBuilder flightClass,outputPreference;
 
 
     private LocalDate flightDate;
@@ -18,58 +20,58 @@ public class TravelDetails {
     /**
      * @return
      */
-    public StringBuffer getFlightClass() {
+    public StringBuilder getFlightClass() {
         return flightClass;
     }
 
     /**
      * @param flightClass
      */
-    public void setFlightClass(StringBuffer flightClass) {
+    public void setFlightClass(StringBuilder flightClass) {
         this.flightClass = flightClass;
     }
 
     /**
      * @return
      */
-    public StringBuffer getOutputPreference() {
+    public StringBuilder getOutputPreference() {
         return outputPreference;
     }
 
     /**
      * @param outputPreference
      */
-    public void setOutputPreference(StringBuffer outputPreference) {
+    public void setOutputPreference(StringBuilder outputPreference) {
         this.outputPreference = outputPreference;
     }
 
     /**
      * @return
      */
-    public StringBuffer getDepartureLocation() {
+    public StringBuilder getDepartureLocation() {
         return departureLocation;
     }
 
     /**
      * @param stringBuffer
      */
-    @NotNull(message = "Departure Location cannot be null")
-    public void setDepartureLocation(StringBuffer stringBuffer) {
+
+    public void setDepartureLocation(StringBuilder stringBuffer) {
         this.departureLocation = stringBuffer;
     }
 
     /**
      * @return
      */
-    public StringBuffer getArrivalLocation() {
+    public StringBuilder getArrivalLocation() {
         return arrivalLocation;
     }
 
     /**
      * @param arrivalLocation
      */
-    @NotNull(message = "Arrival Location cannot be null")
-    public void setArrivalLocation(StringBuffer arrivalLocation) {
+
+    public void setArrivalLocation(StringBuilder arrivalLocation) {
         this.arrivalLocation = arrivalLocation;
     }
 

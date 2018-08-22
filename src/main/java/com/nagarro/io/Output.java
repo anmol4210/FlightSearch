@@ -19,8 +19,8 @@ public class Output {
      */
     public void printResult(Future<ArrayList<FlightDetails>>[] results, TravelDetails traveDetail) throws ExecutionException, InterruptedException {
         ArrayList<FlightDetails> result=new ArrayList<>();
-        for(Future<ArrayList<FlightDetails>> rs:results){
-            result.addAll(rs.get());
+        for(Future<ArrayList<FlightDetails>> fileResult:results){
+            result.addAll(fileResult.get());
         }
     if (result.size()==0){
         System.out.println("Unable to find flights for these preferences");
@@ -54,9 +54,9 @@ public class Output {
     }
     private static Comparator<FlightDetails> byFare=new Comparator<FlightDetails>() {
 
-        public int compare(FlightDetails o1, FlightDetails o2) {
-            int fare_1=o1.getFare();
-            int fare_2=o2.getFare();
+        public int compare(FlightDetails flight1, FlightDetails flight2) {
+            int fare_1=flight1.getFare();
+            int fare_2=flight2.getFare();
             return fare_1-fare_2>0?1:-1;
         }
     };

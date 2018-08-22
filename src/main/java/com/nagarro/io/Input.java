@@ -3,6 +3,11 @@ package com.nagarro.io;
 import com.nagarro.exception.FlightException;
 import com.nagarro.model.TravelDetails;
 import com.nagarro.validator.Validate;
+import java.util.Set;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -24,12 +29,24 @@ public class Input {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         TravelDetails travelDetails=new TravelDetails();
 
-        travelDetails.setDepartureLocation(new StringBuffer(fetch("Departure Location")));
-        travelDetails.setArrivalLocation(new StringBuffer(fetch("Arrival Location")));
-        travelDetails.setFlightClass(new StringBuffer(fetch("Flight Class E or B")));
-        travelDetails.setOutputPreference(new StringBuffer(fetch("Sort Result by flight duration: y/n")));
+        travelDetails.setDepartureLocation(new StringBuilder(fetch("Departure Location")));
+        travelDetails.setArrivalLocation(new StringBuilder(fetch("Arrival Location")));
+        travelDetails.setFlightClass(new StringBuilder(fetch("Flight Class E or B")));
+        travelDetails.setOutputPreference(new StringBuilder(fetch("Sort Result by flight duration: y/n")));
         // System.out.println();
         travelDetails.setFlightDate(LocalDate.parse(fetch("Flight Date(dd/MM/yyyy)"),formatter));
+
+        //////////////////////////
+        // validate the input
+//        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+//        Validator validator =  factory.getValidator();
+//        Set<ConstraintViolation<TravelDetails>> violations = validator.validate(travelDetails);
+//        for (ConstraintViolation<TravelDetails> violation : violations) {
+//            System.out.println(violation.getMessage());
+//        }
+        ///////////////////////////////
+
+
         return travelDetails;
     }
 
